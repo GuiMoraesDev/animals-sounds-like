@@ -30,7 +30,7 @@ export function AnimalsView() {
         <li>
           <button
             onClick={handleCreateAnimal}
-            className={`border-2 border-black p-1 shadow-[2px_2px_0px_#000]`}
+            className={`border-2 border-black p-4 shadow-[2px_2px_0px_#000]`}
           >
             Add
           </button>

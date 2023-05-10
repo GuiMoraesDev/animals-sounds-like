@@ -34,7 +34,7 @@ export function AnimalCard({ animal, handleDeleteAnimal }: Props) {
 
   return (
     <div
-      className={`flex group border-2 py-4 px-8 gap-2 items-center justify-between rounded-sm ${
+      className={`flex group border-2 p-4 gap-4 items-center justify-between rounded-sm ${
         ANIMAL_STYLE[animal.type].card
       }`}
     >
@@ -43,7 +43,7 @@ export function AnimalCard({ animal, handleDeleteAnimal }: Props) {
           {animal.name} the {animal.type}
         </p>
 
-        <div className="flex gap-6">
+        <div className="flex gap-4">
           <button
             onClick={handleShowAnimalSound}
             className={`border-2 border-black p-1 shadow-[2px_2px_0px_#000] ${
