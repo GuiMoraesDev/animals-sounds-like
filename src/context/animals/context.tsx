@@ -1,10 +1,12 @@
 import { PropsWithChildren, createContext, useContext, useState } from "react";
+import { AnimalModule, faker } from "@faker-js/faker";
 import { Animal } from "./types";
 import { initialAnimals } from "./data";
 
 type AnimalDataContextProps = {
   animals: Animal[];
   deleteAnimalById: (id: number) => void;
+  createRandomAnimal: () => void;
 };
 
 const AnimalDataContext = createContext({} as AnimalDataContextProps);
@@ -17,8 +19,26 @@ export function AnimalDataProvider({ children }: PropsWithChildren) {
     setData((state) => state.filter((animal) => animal.id !== id));
   };
 
+  const createRandomAnimal = () => {
+    setData((state) => {
+      const randomName = faker.animal.cow();
+
+      return [
+        ...state,
+        {
+          id: state.length,
+          name: randomName,
+          sound: "Moo",
+          type: "cow",
+        },
+      ];
+    });
+  };
+
   return (
-    <AnimalDataContext.Provider value={{ animals: data, deleteAnimalById }}>
+    <AnimalDataContext.Provider
+      value={{ animals: data, deleteAnimalById, createRandomAnimal }}
+    >
       {children}
     </AnimalDataContext.Provider>
   );
