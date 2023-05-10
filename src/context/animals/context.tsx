@@ -1,5 +1,5 @@
 import { PropsWithChildren, createContext, useContext, useState } from "react";
-import { AnimalModule, faker } from "@faker-js/faker";
+import { faker } from "@faker-js/faker";
 import { Animal } from "./types";
 import { initialAnimals } from "./data";
 

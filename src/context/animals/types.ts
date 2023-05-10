@@ -1,8 +1,8 @@
-export type AnimalType = 'pig' | 'cow' | 'sheep'
+export type AnimalType = "pig" | "cow" | "sheep";
 
 export type Animal = {
-  id: number
-  type: AnimalType
-  name: string
+  id: number;
+  type: AnimalType;
+  name: string;
   sound: string;
-}
+};

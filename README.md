@@ -29,3 +29,17 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - Move the animals into a React.Context, instead of passing as as prop to AnimalsView
 
+
+
+## Project Docs 📖
+
+
+### Project structure 👨‍🔧
+
+- Use [Atomic design](https://bradfrost.com/blog/post/atomic-web-design/) to organize and maintain this project
+- Use the Angular Commits Guide Line to lint the commit message, for more information, click on this [link](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format).
+
+### Points of improvement 🛑
+
+- The animation at animal name that's currently wrongly toggling the visibility, but this behavior can be easily fixed by creating a custom animation at the tailwind.config.js file
+- The random animal creation feature would be better using a  pool of animals and their sounds to create the whole animal object randomly.
