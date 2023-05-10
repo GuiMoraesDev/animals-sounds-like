@@ -3,9 +3,10 @@ import { useRef } from "react";
 
 type Props = {
   animal: Animal;
+  handleDeleteAnimal: () => void;
 };
 
-export function AnimalCard({ animal }: Props) {
+export function AnimalCard({ animal, handleDeleteAnimal }: Props) {
   const ref = useRef<HTMLParagraphElement | null>(null);
 
   const handleShowAnimalSound = () => {
@@ -33,7 +34,7 @@ export function AnimalCard({ animal }: Props) {
 
   return (
     <div
-      className={`flex border-2 py-4 px-8 gap-2 items-center justify-between rounded-sm ${
+      className={`flex group border-2 py-4 px-8 gap-2 items-center justify-between rounded-sm ${
         ANIMAL_STYLE[animal.type].card
       }`}
     >
@@ -42,16 +43,25 @@ export function AnimalCard({ animal }: Props) {
           {animal.name} the {animal.type}
         </p>
 
-        <button
-          onClick={handleShowAnimalSound}
-          className={`border-2 border-black p-1 shadow-[2px_2px_0px_#000] ${
-            ANIMAL_STYLE[animal.type].button
-          } ${animal.type === "cow" && "bg-white"} ${
-            animal.type === "sheep" && "bg-blue-950 text-white"
-          }`}
-        >
-          Make noise
-        </button>
+        <div className="flex gap-6">
+          <button
+            onClick={handleShowAnimalSound}
+            className={`border-2 border-black p-1 shadow-[2px_2px_0px_#000] ${
+              ANIMAL_STYLE[animal.type].button
+            }`}
+          >
+            Make noise
+          </button>
+
+          <button
+            onClick={handleDeleteAnimal}
+            className={`opacity-0 border-2 border-black p-1 shadow-[2px_2px_0px_#000] ${
+              ANIMAL_STYLE[animal.type].button
+            } group-hover:opacity-100 transition-all`}
+          >
+            Delete
+          </button>
+        </div>
       </section>
 
       <p

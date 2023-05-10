@@ -3,7 +3,11 @@ import { useAnimalsData } from "@/context/animals/context";
 import React from "react";
 
 export function AnimalsView() {
-  const { animals } = useAnimalsData();
+  const { animals, deleteAnimalById } = useAnimalsData();
+
+  const handleDeleteAnimal = (id: number) => {
+    deleteAnimalById(id);
+  };
 
   return (
     <div style={{ maxWidth: 800 }}>
@@ -12,7 +16,10 @@ export function AnimalsView() {
       <ul className="flex flex-col gap-4">
         {animals.map((animal) => (
           <li key={animal.id}>
-            <AnimalCard animal={animal} />
+            <AnimalCard
+              animal={animal}
+              handleDeleteAnimal={() => handleDeleteAnimal(animal.id)}
+            />
           </li>
         ))}
       </ul>
