@@ -1,14 +1,13 @@
-import { initialAnimals } from '@/lib/animals'
-import React, { useState } from 'react'
-import { AnimalsView } from './animals'
+import React from "react";
+import { AnimalsView } from "./animals";
+import { AnimalDataProvider } from "@/context/animals/context";
 
 export default function Home() {
-  const [animals] = useState(initialAnimals)
   return (
-    <main
-      className={`min-h-screen p-24`}
-    >
-      <AnimalsView animals={animals} />
-    </main>
-  )
+    <AnimalDataProvider>
+      <main className={`min-h-screen p-24`}>
+        <AnimalsView />
+      </main>
+    </AnimalDataProvider>
+  );
 }
