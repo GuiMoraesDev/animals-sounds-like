@@ -1,5 +1,5 @@
 import React from "react";
-import { AnimalsView } from "./animals";
+import { AnimalsView } from "@/components/pages/animals";
 import { AnimalDataProvider } from "@/context/animals/context";
 
 export default function Home() {

@@ -1,1 +1,0 @@
-export { AnimalsView } from './view'
