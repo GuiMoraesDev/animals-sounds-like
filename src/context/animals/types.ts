@@ -4,4 +4,5 @@ export type Animal = {
   id: number
   type: AnimalType
   name: string
+  sound: string;
 }

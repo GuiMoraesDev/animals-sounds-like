@@ -1,3 +1,4 @@
+import { AnimalCard } from "@/components/molecules/AnimalCard";
 import { useAnimalsData } from "@/context/animals/context";
 import React from "react";
 
@@ -6,9 +7,13 @@ export function AnimalsView() {
 
   return (
     <div style={{ maxWidth: 800 }}>
-      <ul className="list-disc">
+      <h1>Animals</h1>
+
+      <ul className="flex flex-col gap-4">
         {animals.map((animal) => (
-          <li key={animal.id}>{animal.name}</li>
+          <li key={animal.id}>
+            <AnimalCard animal={animal} />
+          </li>
         ))}
       </ul>
     </div>
