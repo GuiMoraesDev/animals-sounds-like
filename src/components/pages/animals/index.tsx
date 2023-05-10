@@ -7,7 +7,7 @@ export function AnimalsView() {
 
   return (
     <div style={{ maxWidth: 800 }}>
-      <h1>Animals</h1>
+      <h1 className="text-4xl mb-8">Animals</h1>
 
       <ul className="flex flex-col gap-4">
         {animals.map((animal) => (
